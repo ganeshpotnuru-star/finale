@@ -1,120 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Supercar Sales Dashboard</title>
+  <meta charset="UTF-8">
+  <title>Supercars Showcase</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background-color: #1a1a1a;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    .car-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      padding: 20px;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .car-card img {
-      width: 200px;
-      border-radius: 8px;
-    }
-
-    .car-details {
-      flex: 1;
-    }
-
-    .car-details h2 {
-      margin: 0 0 10px 0;
-    }
-
-    .car-details p {
-      margin: 4px 0;
-    }
-
-    .price {
-      font-weight: bold;
-      color: #2a9d8f;
-    }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px; }
+    h1 { text-align: center; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .card { background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 300px; overflow: hidden; }
+    .card img { width: 100%; height: auto; display: block; }
+    .card-content { padding: 15px; }
+    .card-content h2 { margin: 0 0 10px; font-size: 1.2em; }
+    .card-content p { margin: 0; color: #555; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Supercar Sales Dashboard</h1>
-    <p>Find your dream supercar today</p>
-  </header>
-
-  <div class="container" id="carList">
-    <!-- Car cards will be inserted here -->
+  <h1>Supercars Showcase</h1>
+  <div class="gallery">
+    <div class="card">
+      <img src="image_url_bugatti_chiron.jpg" alt="Bugatti Chiron Super Sport">
+      <div class="card-content">
+        <h2>Bugatti Chiron Super Sport</h2>
+        <p>Powered by an 8.0 L quad-turbo V16 with 1,578 bhp—capped top speed around 273 mph. :contentReference[oaicite:1]{index=1}</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="image_url_rimac_nevera.jpg" alt="Rimac Nevera">
+      <div class="card-content">
+        <h2>Rimac Nevera</h2>
+        <p>Electric hypercar with 1,914 bhp, 0–60 mph in ~1.85 s, top speed ~258 mph. :contentReference[oaicite:2]{index=2}</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="image_url_lamborghini_revuelto.jpg" alt="Lamborghini Revuelto">
+      <div class="card-content">
+        <h2>Lamborghini Revuelto</h2>
+        <p>A V12-hybrid yielding 1,001 hp, 0–60 mph in ~2.3 s. :contentReference[oaicite:3]{index=3}</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="image_url_koenigsegg_gemera.jpg" alt="Koenigsegg Gemera">
+      <div class="card-content">
+        <h2>Koenigsegg Gemera</h2>
+        <p>Hybrid “mega-GT” with up to 1,700 hp (option up to 2,300 hp), 0–60 mph in ~2.0 s. :contentReference[oaicite:4]{index=4}</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="image_url_ferrari_296_gtb.jpg" alt="Ferrari 296 GTB">
+      <div class="card-content">
+        <h2>Ferrari 296 GTB</h2>
+        <p>One of the top supercars of 2024–2025—hybrid V6 pack combining performance and flair. :contentReference[oaicite:5]{index=5}</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="image_url_mclaren_750s.jpg" alt="McLaren 750S">
+      <div class="card-content">
+        <h2>McLaren 750S</h2>
+        <p>Track-focused, turbocharged, non-electrified supercar topping many 2024–2025 best lists. :contentReference[oaicite:6]{index=6}</p>
+      </div>
+    </div>
   </div>
-
-  <script>
-    const cars = [
-      {
-        name: "Lamborghini Aventador",
-        year: 2022,
-        price: "$450,000",
-        image: "https://cdn.carbuzz.com/gallery-images/840x560/784000/900/784987.jpg"
-      },
-      {
-        name: "Ferrari SF90 Stradale",
-        year: 2023,
-        price: "$510,000",
-        image: "https://cdn.motor1.com/images/mgl/0ANoA/s1/ferrari-sf90-stradale.jpg"
-      },
-      {
-        name: "McLaren 720S",
-        year: 2025,
-        price: "$300,000",
-        image: "https://cdn.motor1.com/images/mgl/3xN3B/s1/mclaren-720s.jpg"
-      },
-      {
-        name: "Bugatti Chiron",
-        year: 2022,
-        price: "$3,000,000",
-        image: "https://cdn.motor1.com/images/mgl/pbZ8Y/s1/bugatti-chiron.jpg"
-      },
-      {
-        name: "Porsche 911 Turbo S",
-        year: 2023,
-        price: "$230,000",
-        image: "https://cdn.motor1.com/images/mgl/1xZnJ/s1/porsche-911-turbo-s.jpg"
-      }
-    ];
-
-    const carList = document.getElementById('carList');
-
-    cars.forEach(car => {
-      const card = document.createElement('div');
-      card.className = 'car-card';
-      card.innerHTML = `
-        <img src="${car.image}" alt="${car.name}" />
-        <div class="car-details">
-          <h2>${car.name}</h2>
-          <p><strong>Year:</strong> ${car.year}</p>
-          <p class="price">${car.price}</p>
-        </div>
-      `;
-      carList.appendChild(card);
-    });
-  </script>
 </body>
 </html>
+
